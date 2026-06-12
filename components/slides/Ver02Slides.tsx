@@ -9,7 +9,7 @@ import WhyInfographic from "@/components/WhyInfographic";
 function Brand() {
   return (
     <div className="v2s-brand">
-      <img className="nt" src="/assets/nt-logo.png" alt="NT — National Telecom" />
+      <img className="nt" src="/assets/nt-logo.svg" alt="NT — National Telecom" />
       <span className="x">×</span>
       <img className="tesa" src="/assets/tesa-logo.svg" alt="TESA" />
       <span className="aiot">AIoT</span>

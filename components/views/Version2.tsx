@@ -271,8 +271,8 @@ export default function Version2() {
         <div className="container inner">
           <input type="checkbox" id="rv-menu" className="menu-toggle" />
           <a className="brand dual" href="#top">
-            <img className="nt-logo" src="/assets/nt-logo.png" alt="NT — National Telecom" />
-            <span className="x">×</span>
+            <img className="nt-logo" src="/assets/nt-logo.svg" alt="NT — National Telecom" />
+                  <span className="x">×</span>
             <img className="brand-logo" src="/assets/tesa-logo.svg" alt="TESA" />
             <span className="green">AIoT</span>
           </a>
@@ -285,13 +285,12 @@ export default function Version2() {
             <a href="#why">Why NT</a>
             <a href="#agenda">Agenda</a>
             <a href="#roles">Roles</a>
-            <a href="#sponsor">Sponsorship</a>
+            <a href="#register">Sponsorship</a>
             <a href="#register">Register</a>
           </nav>
           <div className="cta">
             <a className="rv-btn ghost" href="/ver01">Standard Edition →</a>
             <a className="rv-btn ghost" href="/ver02/slides">▦ Slides</a>
-            <a className="rv-btn green" href="#register">REGISTER</a>
           </div>
         </div>
       </header>
@@ -314,7 +313,7 @@ export default function Version2() {
                 </p>
                 <div className="hero-cta">
                   <a className="rv-btn green" href="#register">REGISTER NOW</a>
-                  <a className="rv-btn ghost" href="#sponsor">★ สนับสนุนเต็มจำนวนโดย TESA</a>
+                  <a className="rv-btn ghost" href="#register">★ สนับสนุนเต็มจำนวนโดย TESA</a>
                 </div>
                 <div className="pills">
                   <span><span className="green">FREE</span>&nbsp;FOR NT</span>
@@ -508,15 +507,26 @@ export default function Version2() {
           </div>
         </section>
 
-        {/* ---------------- special sponsorship ---------------- */}
-        <section id="sponsor" className="rv-sec rv-spon">
+        {/* ---------------- register + sponsorship (merged) ---------------- */}
+        <section id="register" className="rv-sec rv-register">
           <div className="container">
-            <div className="spon-card">
-              <div className="spon-badge">พิเศษ!</div>
-              <div className="spon-main">
-                <h2>
-                  ผู้อบรม NT ไม่มีค่าใช้จ่ายใด ๆ
-                </h2>
+            <div className="rv-head">
+              <div className="eyebrow">REGISTER NOW</div>
+              <h2>สมัครเข้าร่วมอบรม</h2>
+              <p>เตรียมความพร้อมทีม NT รับมือแนวทาง AIoT Cybersecurity ของ สกมช.</p>
+            </div>
+            <div className="reg-merge">
+              {/* left: free / sponsorship */}
+              <div className="spon-card">
+                <div className="spon-badge">พิเศษ!</div>
+                <h3 className="spon-h">ผู้อบรม NT ไม่มีค่าใช้จ่ายใด ๆ</h3>
+                <div className="spon-value">
+                  <div className="vlbl">มูลค่ารวม</div>
+                  <div className="vamt">
+                    <s>20,000</s> บาท<span>/ท่าน</span>
+                  </div>
+                  <div className="vfree">ฟรี! สำหรับบุคลากร NT</div>
+                </div>
                 <div className="spon-incl">
                   {INCLUDED.map((it) => (
                     <div className="incl" key={it}>
@@ -526,60 +536,43 @@ export default function Version2() {
                   ))}
                 </div>
               </div>
-              <div className="spon-value">
-                <div className="vlbl">มูลค่ารวม</div>
-                <div className="vamt">
-                  <s>20,000</s> บาท<span>/ท่าน</span>
-                </div>
-                <div className="vfree">ฟรี! สำหรับบุคลากร NT</div>
-                <a className="rv-btn green" href="#register">สมัครเลย</a>
-              </div>
-            </div>
-          </div>
-        </section>
 
-        {/* ---------------- register ---------------- */}
-        <section id="register" className="rv-sec rv-register">
-          <div className="container">
-            <div className="rv-head">
-              <div className="eyebrow">REGISTER NOW</div>
-              <h2>สมัครเข้าร่วมอบรม</h2>
-              <p>เตรียมความพร้อมทีม NT รับมือแนวทาง AIoT Cybersecurity ของ สกมช.</p>
-            </div>
-            <div className="reg-wrap">
-              <div className="rv-info">
-                {[
-                  ["DURATION", "2 วัน"],
-                  ["TIME", "09:00 – 16:30"],
-                  ["FORMAT", "Workshop + Hands-on Lab"],
-                  ["LANGUAGE", "ภาษาไทย"],
-                  ["TARGET GROUP", "ผู้บริหาร · ผู้จัดการ · วิศวกร · ทีมปฏิบัติการ NT"],
-                ].map(([lbl, val]) => (
-                  <div className="row" key={lbl}>
-                    <div className="ic">
-                      <svg viewBox="0 0 24 24">
-                        <path d="M12 2 L20 5 V12 C20 17 16 21 12 22 C8 21 4 17 4 12 V5 Z" fill="none" stroke="#7fd0ff" strokeWidth="2" />
-                        <path d="M9 12 L11 14 L15 9.5" fill="none" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
+              {/* right: course details + QR / CTA */}
+              <div className="reg-right">
+                <div className="rv-info">
+                  {[
+                    ["DURATION", "2 วัน"],
+                    ["TIME", "09:00 – 16:30"],
+                    ["FORMAT", "Workshop + Hands-on Lab"],
+                    ["LANGUAGE", "ภาษาไทย"],
+                    ["TARGET GROUP", "ผู้บริหาร · ผู้จัดการ · วิศวกร · ทีมปฏิบัติการ NT"],
+                  ].map(([lbl, val]) => (
+                    <div className="row" key={lbl}>
+                      <div className="ic">
+                        <svg viewBox="0 0 24 24">
+                          <path d="M12 2 L20 5 V12 C20 17 16 21 12 22 C8 21 4 17 4 12 V5 Z" fill="none" stroke="#7fd0ff" strokeWidth="2" />
+                          <path d="M9 12 L11 14 L15 9.5" fill="none" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </div>
+                      <div>
+                        <div className="lbl">{lbl}</div>
+                        <div className="val">{val}</div>
+                      </div>
                     </div>
-                    <div>
-                      <div className="lbl">{lbl}</div>
-                      <div className="val">{val}</div>
-                    </div>
+                  ))}
+                  <div className="reg-contact">
+                    <span>☎ 085-495-4294</span>
+                    <span>✉ contact@tesa.or.th</span>
+                    <span>🌐 www.tesa.or.th</span>
                   </div>
-                ))}
-                <div className="reg-contact">
-                  <span>☎ 085-495-4294</span>
-                  <span>✉ contact@tesa.or.th</span>
-                  <span>🌐 www.tesa.or.th</span>
                 </div>
-              </div>
-              <div className="rv-qr">
-                <div className="qbox">
-                  <img src="/assets/qr.svg" alt="QR สำหรับลงทะเบียน" />
+                <div className="rv-qr">
+                  <div className="qbox">
+                    <img src="/assets/qr.svg" alt="QR สำหรับลงทะเบียน" />
+                  </div>
+                  <a className="rv-btn green" href="#register">REGISTER NOW!</a>
+                  <div className="scan">สแกนเพื่อสมัครเข้าร่วมอบรม</div>
                 </div>
-                <a className="rv-btn green" href="#register">REGISTER NOW!</a>
-                <div className="scan">สแกนเพื่อสมัครเข้าร่วมอบรม</div>
               </div>
             </div>
           </div>
@@ -589,8 +582,8 @@ export default function Version2() {
       <footer className="rv-foot">
         <div className="container inner">
           <div className="brand">
-            <img className="nt-logo" src="/assets/nt-logo.png" alt="NT — National Telecom" />
-            <span className="x">×</span>
+            <img className="nt-logo" src="/assets/nt-logo.svg" alt="NT — National Telecom" />
+                  <span className="x">×</span>
             <img className="brand-logo" src="/assets/tesa-logo.svg" alt="TESA" />
             <span className="green">AIoT</span>
           </div>
