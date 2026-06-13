@@ -339,6 +339,41 @@
   color: #0e2f6d;
 }
 
+/* align every row (header · who · each item · takeaway) across the 3 cards
+   so they line up neatly when shown side by side (subgrid) */
+@media (min-width: 980px) {
+  .rv-v2 #roles .rv-grid.cols3 {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto repeat(3, auto) auto;
+    row-gap: 0;
+  }
+  .rv-v2 #roles .rv-role {
+    display: grid;
+    grid-row: 1 / -1;
+    grid-template-rows: subgrid;
+    row-gap: 0;
+  }
+  .rv-v2 #roles .rv-role .chd {
+    grid-row: 1;
+  }
+  .rv-v2 #roles .rv-role .cbody {
+    grid-row: 2 / -1;
+    display: grid;
+    grid-template-rows: subgrid;
+    row-gap: 0;
+  }
+  .rv-v2 #roles .rv-role ul {
+    display: contents;
+  }
+  .rv-v2 #roles .rv-role li {
+    padding: 5px 0;
+  }
+  .rv-v2 #roles .rv-role .take {
+    margin-top: 14px;
+    align-self: stretch;
+  }
+}
+
 /* ---- special sponsorship ---- */
 /* ======= register + sponsorship (merged): free card | course details ======= */
 .rv-v2 .rv-register .reg-merge {
